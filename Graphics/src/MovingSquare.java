@@ -9,7 +9,7 @@ public class MovingSquare extends Canvas
 		    		{
 		    		MovingSquare canvas = new MovingSquare();
 			        JFrame frame = new JFrame();
-			        frame.setSize(650, 650);
+			        frame.setSize(500, 500);
 			        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			        frame.getContentPane().add(canvas).setBackground(Color.white);
 			        frame.setLocationRelativeTo(null); //Sets JPanel to center of screen 
@@ -19,6 +19,9 @@ public class MovingSquare extends Canvas
 		    	public void paint(Graphics graphics)
 		    	{
 		    		
+		    		
+		    		while(true)
+		    			{
 		    		for(int i= 0; i< 500; i++)
 		    			{
 		    				
@@ -29,6 +32,10 @@ public class MovingSquare extends Canvas
 		    				
 		    				graphics.setColor(Color.white);
 		    				graphics.fillRect(i, i, 20, 20);
+		    				
+		    			
+		    	
+		    			}
 		    			}
 		    	}
 		    	

@@ -11,33 +11,37 @@ public class Checkerboard extends Canvas
 			        JFrame frame = new JFrame();
 			        frame.setSize(640, 640);
 			        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-			        frame.getContentPane().add(canvas).setBackground(Color.gray);
+			        frame.getContentPane().add(canvas).setBackground(Color.white);
 			        frame.setLocationRelativeTo(null); //Sets JPanel to center of screen 
 			        frame.setResizable(false);
 			        frame.setVisible(true);
 		    		}
 		    	public void paint(Graphics graphics)
 		    	{
-		    		int whiteSquare = 80;
-		    		int blackSquare = 80;
-		    		int down = 80;
-		    		int down2 = 80;
-		    		for(int i = 0; i < 640; i++)
+		    		graphics.setColor(Color.BLUE);
+		    		for(int colum = 10; colum < 160; colum += 40)
 		    			{
-		    				blackSquare+=160;
-		    				graphics.setColor(Color.black);
-		    				graphics.fillRect(blackSquare,down2,80,80);
-		    				down2 = down2+down2;
+		    				for(int row = 10; row < 160; row+=40)
+		    					{
+		    						graphics.drawRect(row,colum,19,19);
+		    						graphics.fillRect(row+20,colum, 20, 20);
+		    					}
+		    					
+		 
 		    			}
-		    		for(int c= 0; c < 640; c++)
+		    		
+		    		for(int i = 30; i < 160; i += 40)
 		    			{
-		    				whiteSquare+=160;
-		    				graphics.setColor(Color.white);
-		    				graphics.fillRect(whiteSquare,down,80,80);
-		    				down= down+down;
 		    				
-		    			
+		    				for(int row = 10; row< 160; row+=40)
+		    					{
+		    						
+		    						graphics.fillRect(row, i, 20, 20);
+		    						graphics.drawRect(row+20, i, 19, 19);
+		    					}
 		    			}
-		    	}
+		    	
+		    	
+		    	}	
 
 	}
